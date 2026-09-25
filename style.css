@@ -1,0 +1,575 @@
+:root {
+    --color-primary: #5B176E;
+    /* Roxo Açaí - Fundo do header */
+    --color-secondary: #8E2AAE;
+    /* Roxo Vibrante - Efeitos de interação (hover) */
+    --color-accent: #B7D52A;
+    /* Verde Lima - Botões de destaque */
+    --color-background: #FFF8EE;
+    /* Creme Claro - Fundo geral do site */
+    --color-text: #24152A;
+    /* Roxo escuro - Texto para garantir contraste seguro (Regras de Acessibilidade WCAG) */
+}
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+
+body {
+    background-color: var(--color-background);
+    color: var(--color-text);
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.main-header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    background-color: var(--color-primary);
+    padding: 1rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.topo-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 8px 0;
+}
+
+.btn-hamburguer {
+    display: block;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 8px;
+}
+
+.btn-hamburguer .linha {
+    display: block;
+    width: 28px;
+    height: 3px;
+    background-color: #ffffff;
+    margin: 5px 0;
+    border-radius: 3px;
+    transition: all 0.3s ease-in-out;
+}
+
+/* ==========================================
+   ANIMAÇÃO DO X NO HAMBÚRGUER (MOBILE)
+   ========================================== */
+
+.btn-hamburguer.ativo .linha:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+}
+
+.btn-hamburguer.ativo .linha:nth-child(2) {
+    opacity: 0;
+    transform: scaleX(0);
+}
+
+.btn-hamburguer.ativo .linha:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+}
+
+.brand-logo {
+    width: 150px;
+}
+
+.nav-bar {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    margin: 0 auto;
+}
+
+.nav-bar.ativo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem 0;
+}
+
+/* ==========================================
+   ANIMAÇÃO CASCATA — SLIDE DA DIREITA
+   ========================================== */
+
+@keyframes slideFromRight {
+    from {
+        opacity: 0;
+        transform: translateX(40px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.nav-bar.ativo .nav-item,
+.nav-bar.ativo .cta-container {
+    opacity: 0;
+    animation: slideFromRight 0.4s ease forwards;
+}
+
+.nav-bar.ativo .nav-item:nth-child(1) {
+    animation-delay: 0.05s;
+}
+
+.nav-bar.ativo .nav-item:nth-child(2) {
+    animation-delay: 0.15s;
+}
+
+.nav-bar.ativo .nav-item:nth-child(3) {
+    animation-delay: 0.25s;
+}
+
+.nav-bar.ativo .cta-container {
+    animation-delay: 0.35s;
+}
+
+/* ==========================================
+   NAV-LINKS: COLUNA NO MOBILE (padrão)
+   ========================================== */
+.nav-links {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+    list-style: none;
+}
+
+.nav-link {
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+
+.nav-link:hover {
+    color: var(--color-secondary);
+}
+
+.btn.cta-button {
+    background-color: var(--color-accent);
+    color: var(--color-primary);
+    padding: 0.6rem 1.5rem;
+    text-decoration: none;
+    font-weight: 700;
+    border-radius: 50px;
+    transition: transform 0.2s ease, filter 0.2s ease;
+}
+
+.btn.cta-button:hover {
+    transform: scale(1.05);
+    filter: brightness(1.1);
+}
+
+main {
+    padding-top: 80px;
+}
+
+/* HERO SECTION (SOBRE) - MOBILE-FIRST */
+.hero-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 4rem 1rem;
+    gap: 3rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.hero-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.hero-title {
+    color: var(--color-primary);
+    font-size: 2.5rem;
+    line-height: 1.2;
+    font-weight: 800;
+}
+
+.hero-subtitle {
+    color: var(--color-text);
+    font-size: 1.1rem;
+    line-height: 1.6;
+    max-width: 600px;
+}
+
+.btn.secondary-btn {
+    background-color: transparent;
+    color: var(--color-primary);
+    border: 2px solid var(--color-primary);
+    padding: 0.8rem 2rem;
+    text-decoration: none;
+    font-weight: 700;
+    border-radius: 50px;
+    transition: all 0.3s ease;
+}
+
+.btn.secondary-btn:hover {
+    background-color: var(--color-primary);
+    color: #FFFFFF;
+    transform: translateY(-3px);
+}
+
+.hero-image {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(91, 23, 110, 0.2);
+}
+
+/* MENU SECTION (CARDÁPIO) */
+
+.menu-section {
+    padding: 4rem 1rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.section-title {
+    color: var(--color-primary);
+    font-size: 2rem;
+    margin-bottom: 3rem;
+}
+
+.carousel-container {
+    display: flex;
+    gap: 1.5rem;
+    overflow-x: auto;
+    overscroll-behavior-x: contain;
+    scroll-snap-type: x mandatory;
+    padding: 1.8rem;
+    scrollbar-width: none;
+}
+
+
+.carousel-container::-webkit-scrollbar {
+    display: none;
+}
+
+.product-card {
+    flex: 0 0 300px;
+    scroll-snap-align: start;
+    background-color: #FFFFFF;
+    border-radius: 16px;
+    overflow: hidden;
+    will-change: transform;
+    isolation: isolate;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.08);
+    transition: transform 0.5s ease, box-shadow 0.8s ease;
+    text-align: left;
+}
+
+.product-card:hover {
+    transform: scale(1.1);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.08), inset 0 2px 20px #8E2AAE66;
+}
+
+.product-image {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    border-radius: 16px 16px 0 0;
+}
+
+
+
+.product-info {
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+}
+
+.product-name {
+    color: var(--color-primary);
+    font-size: 1.3rem;
+}
+
+.product-description {
+    color: #555555;
+    font-size: 0.95rem;
+    font-weight: 500;
+    line-height: 1.4;
+    min-height: 60px;
+}
+
+.product-price {
+    color: var(--color-text);
+    font-weight: 800;
+    font-size: 1.4rem;
+}
+
+.btn.add-btn {
+    background-color: var(--color-accent);
+    color: var(--color-primary);
+    border: none;
+    padding: 0.8rem;
+    border-radius: 8px;
+    font-weight: 700;
+    cursor: pointer;
+    margin-top: 0.5rem;
+    transition: backgroud-color 0.2s ease, trasform 0.2s ease;
+}
+
+.btn.add-btn:hover {
+    background-color: #a4c026;
+    transform: scale(1.02);
+}
+
+.carousel-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    position: relative;
+} 
+
+.carousel-arrow {
+    display: none; 
+}
+
+/* FAQ SECTION (DÚVIDAS FREQUENTES) */
+
+.faq-section {
+    padding: 4rem 1rem;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.faq-title {
+    text-align: center;
+    color: var(--color-primary);
+    margin-bottom: 2rem;
+    font-size: 2rem;
+}
+
+.faq-item {
+    background-color: #FFFFFF;
+    border: 1px solid #EAD8F1;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+    overflow: hidden;
+}
+
+/* ========================================== */
+/* A LÓGICA DO CHECKBOX HACK                  */
+/* ========================================== */
+
+.faq-toggle {
+    position: absolute;
+    opacity: 0;
+    pointer-events: none;
+}
+
+.faq-question {
+    display: block;
+    padding: 1.5rem;
+    font-weight: 600;
+    cursor: pointer;
+    color: var(--color-text);
+    position: relative;
+    border: solid;
+    border-radius: 8px;
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.2);
+}
+
+.faq-toggle:focus-visible~.faq-question {
+    outline: 2px solid var(--color-accent);
+    outline-offset: -2px;
+}
+
+/* ========================================== */
+/* ÍCONE GEOMÉTRICO ANIMADO (+ E -)           */
+/* ========================================== */
+
+.faq-question::after {
+    content: "";
+    position: absolute;
+    right: 1.5rem;
+    top: 50%;
+    width: 16px;
+    height: 2px;
+    background-color: var(--color-primary);
+    transform: translateY(-50%);
+    transition: background-color 0.4s ease;
+}
+
+.faq-question::before {
+    content: "";
+    position: absolute;
+    right: 1.5rem;
+    top: 50%;
+    width: 16px;
+    height: 2px;
+    background-color: var(--color-primary);
+    transform: translateY(-50%) rotate(90deg);
+    transition: transform 0.4s ease, background-color 0.4s ease;
+}
+
+.faq-toggle:checked~.faq-question::after,
+.faq-toggle:checked~.faq-question::before {
+    background-color: var(--color-secondary);
+}
+
+.faq-toggle:checked~.faq-question::before {
+    transform: translateY(-50%) rotate(0deg);
+}
+
+/* ========================================== */
+/* ANIMAÇÃO FLUIDA DE ALTURA (CSS GRID)       */
+/* ========================================== */
+
+.faq-answer-wrapper {
+    display: grid;
+    grid-template-rows: 0fr;
+    transition: grid-template-rows 0.4s ease;
+}
+
+.faq-answer-inner {
+    overflow: hidden;
+}
+
+.faq-toggle:checked~.faq-answer-wrapper {
+    grid-template-rows: 1fr;
+}
+
+.faq-answer {
+    padding: 10px 1.5rem 1.5rem 1.5rem;
+    line-height: 1.6;
+    color: #4A4A4A;
+    background-color: #EAD8F1;
+}
+
+
+/* ==========================================
+   PC — a partir de 768px
+   ========================================== */
+
+@media (min-width: 768px) {
+
+    /* Header vira flex: logo à esquerda, nav à direita */
+    .main-header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    /* Topo-header vira só container da logo */
+    .topo-header {
+        width: auto;
+        padding: 0;
+    }
+
+    /* Hambúrguer some no PC */
+    .btn-hamburguer {
+        display: none;
+    }
+
+    /* Nav sempre visível no PC, em linha */
+    .nav-bar {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        gap: 1.5rem;
+        margin: 0;
+    }
+
+    /* Links em LINHA no PC */
+    .nav-links {
+        flex-direction: row;
+    }
+
+    /* Desativa animação cascata no PC */
+    .nav-bar .nav-item,
+    .nav-bar .cta-container {
+        opacity: 1;
+        animation: none;
+    }
+
+    /* Hero section lado a lado */
+    .hero-section {
+        flex-direction: row;
+        text-align: left;
+        justify-content: space-between;
+    }
+
+    .hero-content {
+        align-items: flex-start;
+        flex: 1;
+    }
+
+    .hero-image-container {
+        flex: 1;
+        max-width: 500px;
+    }
+
+    /* Animação X do hambúrguer — mantida caso necessário */
+    .btn-hamburguer.ativo .linha:nth-child(1) {
+        transform: translateY(8px) rotate(45deg);
+    }
+
+    .btn-hamburguer.ativo .linha:nth-child(2) {
+        opacity: 0;
+    }
+
+    .btn-hamburguer.ativo .linha:nth-child(3) {
+        transform: translateY(-8px) rotate(-45deg);
+    }
+
+    .carousel-arrow {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 45px;
+        height: 45px;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        z-index: 10;
+        flex-shrink: 0;
+        background-color: var(--color-primary);
+        color: #FFFFFF;
+        border: none;
+        border-radius: 50%;
+        font-size: 1.2rem;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+        box-shadow: 0 4px 8px rgb(91 26 110 / 0.3);
+    }
+
+    .left-arrow {
+        left: -50px;
+    }
+
+    .right-arrow {
+        right: -50px;
+
+    }
+
+    .carousel-arrow:hover {
+        background-color: var(--color-secondary);
+        transform: translateY(-50%) scale(1.1);
+    }
+}
