@@ -20,6 +20,7 @@
 
 html {
     scroll-behavior: smooth;
+    scroll-padding-top: 110px;
 }
 
 
@@ -294,8 +295,6 @@ main {
     border-radius: 16px 16px 0 0;
 }
 
-
-
 .product-info {
     padding: 1.5rem;
     display: flex;
@@ -344,10 +343,10 @@ main {
     align-items: center;
     gap: 1rem;
     position: relative;
-} 
+}
 
 .carousel-arrow {
-    display: none; 
+    display: none;
 }
 
 /* FAQ SECTION (DÚVIDAS FREQUENTES) */
@@ -460,6 +459,121 @@ main {
     line-height: 1.6;
     color: #4A4A4A;
     background-color: #EAD8F1;
+}
+
+
+/* contact section */
+
+.contact-section {
+    padding: 4rem 1rem;
+    background-color: var(--color-background);
+}
+
+.contact-container {
+    max-width: 600px;
+    margin: 0 auto;
+    background-color: #FFFFFF;
+    padding: 2.5rem 1.5rem;
+    border-radius: 16px;
+    box-shadow: 0 10px 25px rgba(91, 23, 110, 0.1);
+}
+
+.contact-container .section-title {
+    text-align: center;
+    margin-bottom: 0.5rem;
+}
+
+.section-subtitle {
+    text-align: center;
+    color: #555555;
+    margin-bottom: 1rem;
+    font-size: 1rem;
+    line-height: 1.5;
+}
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+}
+
+.form-label {
+    color: var(--color-primary);
+    font-weight: 600;
+    font-size: 0.95rem;
+}
+
+.form-input,
+.form-textarea {
+    width: 100%;
+    padding: 1rem;
+    border: 2px solid #EAD8F1;
+    border-radius: 8px;
+    font-family: inherit;
+    font-size: 1rem;
+    color: var(--color-text);
+    background-color: #fafafa;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.form-input:focus,
+.form-textarea:focus {
+    outline: none;
+    border-color: var(--color-secondary);
+    box-shadow: 0 0 0 3px rgba(142, 42, 174, 0.2);
+}
+
+.form-textarea {
+    resize: vertical;
+    min-height: 120px;
+}
+
+.submit-btn {
+    width: 100%;
+    font-size: 1.1rem;
+    padding: 1.2rem;
+    margin-top: 1rem;
+    border: none;
+}
+
+.rodape {
+    background-color: var(--color-primary);
+    text-align: center;
+    padding: 40px 5%;
+    border-top: 1px solid var(--cor-border2);
+}
+
+.rodape p {
+    color: #ffffff;
+    font-size: 0.9rem;
+    margin-bottom: 10px;
+    opacity: 0.7;
+}
+
+.redes-sociais {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    margin-bottom: 30px;
+}
+
+.redes-sociais a {
+    color: var(--color-background);
+    font-size: 1.4rem;
+    transition: color 0.3s ease, transform 0.3s ease;
+    display: inline-block;
+}
+
+.redes-sociais a:hover {
+    color: var(--color-accent);
+    transform: translateY(-5px) scale(1.15);
+    filter: drop-shadow(0 0 10px var(--cor-border2));
 }
 
 

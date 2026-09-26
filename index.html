@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- <meta http-equiv="Content-Security-Policy"
         content="default-src 'self'; img-src 'self' https: data:; style-src 'self'; script-src 'self';"> -->
-    <title>Açaíteria | Açaí, Cremes e Delícias</title>
+    <title>Açaíteria | Açaí Puro Sabor</title>
     <meta name="description"
         content="Açaí cremoso, saboroso e preparado do seu jeito. Monte seu açaí com frutas, cremes e acompanhamentos e aproveite cada colherada.">
     <meta property="og:title" content="Açaíteria | Seu Açaí do Seu Jeito">
@@ -25,7 +25,7 @@
 
         <div class="topo-header">
             <figure class="brand-logo-container">
-                <img src="/assets/logo.svg" alt="Logo of the modern Açaí shop" class="brand-logo">
+                <img src="/assets/img/logo.svg" alt="Logo of the modern Açaí shop" class="brand-logo">
             </figure>
             <button class="btn-hamburguer" id="btnHamburguer" aria-label="Abrir Menu" aria-expanded="false">
                 <span class="linha"></span>
@@ -60,13 +60,13 @@
         <!--HERO / ABOUT SECTION (SOBRE)  -->
         <section id="about" class="hero-section">
             <div class="hero-content">
-                <h1 class="hero-title">O Açaí Mais Cremoso de Natal, Feito do Seu Jeito!</h1>
+                <h1 class="hero-title">O Açaí Mais Cremoso da Cidade, Feito do Seu Jeito!</h1>
                 <p class="hero-subtitle">Ingredientes frescos, cremes artesanais e entrega rápida. Monte a sua barca ou
                     copo com mais de 30 acompanhamentos e sinta a verdadeira energia.</p>
                 <a href="#menu" class="btn secondary-btn">Ver Cardápio</a>
             </div>
             <figure class="hero-image-container">
-                <img src="/assets/acai-bowl.png"
+                <img src="/assets/img/acai-bowl.png"
                     alt="Tigela de açaí transbordando com morangos frescos, banana e leite condensado"
                     class="hero-image">
             </figure>
@@ -100,7 +100,8 @@
                             class="product-image" loading="lazy">
                         <div class="product-info">
                             <h3 class="product-name">Barca Trufada</h3>
-                            <p class="product-description">Para dividir! Nossa famosa barca com com morangos frescos, amendoim, confeitos coloridos, coco ralado e leite condensado.</p>
+                            <p class="product-description">Para dividir! Nossa famosa barca com com morangos frescos,
+                                amendoim, confeitos coloridos, coco ralado e leite condensado.</p>
                             <span class="product-price">R$ 35,00</span>
                             <button class="btn add-btn">Pedir Este</button>
                         </div>
@@ -120,8 +121,8 @@
 
 
                     <article class="product-card">
-                        <img src="./assets/img/creme-cupuacu.png" alt="Copo de Creme de Cupuaçu puro" class="product-image"
-                            loading="lazy">
+                        <img src="./assets/img/creme-cupuacu.png" alt="Copo de Creme de Cupuaçu puro"
+                            class="product-image" loading="lazy">
                         <div class="product-info">
                             <h3 class="product-name">Creme de Cupuaçu</h3>
                             <p class="product-description">O verdadeiro sabor do Norte. Creme de cupuaçu cremoso,
@@ -191,7 +192,60 @@
             </div>
         </section>
 
+        <!--CONTACT SECTION (FORMULÁRIO SEGURO)  -->
+        <section id="contact" class="contact-section">
+
+            <div class="contact-container">
+                <h2 class="section-title">Faça seu Pedido</h2>
+                <p class="section-subtitle">Preencha os dados abaixo e enviaremos seu pedido direto para o nosso
+                    WhatsApp!</p>
+                <form id="order-form" class="contact-form">
+
+                    <div class="form-group">
+                        <label for="customer-name" class="form-label">Seu Nome Completo</label>
+                        <input id="customer-name" type="text" class="form-input" required maxlength="50"
+                            autocomplete="name" placeholder="Ex: João da Silva">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="customer-phone" class="form-label">Seu WhatsApp (com DDD)</label>
+                        <input id="customer-phone" type="tel" class="form-input" required pattern="[0-9]{10,15}"
+                            maxlength="15" autocomplete="tel" placeholder="Ex: 84999999999">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="customer-order" class="form-label">O que você vai querer hoje?</label>
+                        <textarea id="customer-order" class="form-textarea" required maxlength="250" rows="4"
+                            placeholder="Ex: Quero um Açaí Tradicional e uma Barca Trufada. Pagamento no PIX."></textarea>
+                    </div>
+                    <button type="submit" class="btn cta-button submit-btn">Enviar para o WhatsApp</button>
+
+                </form>
+            </div>
+        </section>
     </main>
+
+     <footer class="rodape">
+
+        <div class="redes-sociais">
+            <a href="https://instagram.com.br/" target="_blank" rel="noopener noreferrer">
+                <i class="bi bi-instagram"></i>
+            </a>
+            <a href="https://api.whatsapp.com/send/?phone=5584900000000/" target="_blank" rel="noopener noreferrer">
+                <i class="bi bi-whatsapp"></i>
+            </a>
+            <a href="https://facebook.com.br/" target="_blank" rel="noopener noreferrer">
+                <i class="bi bi-facebook"></i>
+            </a>
+            <a href="https://youtube.com.br/" target="_blank" rel="noopener noreferrer">
+                <i class="bi bi-youtube"></i>
+            </a>
+        </div>
+        <p><a href="privacidade.html" target="_blank"
+                style="color: #ffff; text-decoration: underline;">Política de Privacidade</a></p>
+        <p>&copy; 2026 Açaí Puro Sabor. Todos os direitos reservados.</p>
+        <p>Desenvolvido por <span>Ronaldo Mello</span>.</p>
+    </footer>
 
     <script src="script.js"></script>
 </body>
